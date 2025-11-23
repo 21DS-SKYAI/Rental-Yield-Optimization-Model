@@ -1,0 +1,19 @@
+import streamlit as st
+import pandas as pd
+from src.compute_yield import compute_yield
+from src.cluster_markets import cluster_markets
+
+st.title("Rental Yield Optimization")
+
+uploaded = st.file_uploader("Upload rental data CSV", type=["csv"])
+if uploaded:
+    df = pd.read_csv(uploaded)
+    df = compute_yield(df)
+    df, model = cluster_markets(df)
+
+    st.subheader("Clustered Rental Markets")
+    st.dataframe(df.head())
+
+    cluster_id = st.selectbox("Select Cluster", sorted(df["cluster"].unique()))
+    st.write("Sample Listings in Cluster:")
+    st.dataframe(df[df["cluster"] == cluster_id].head())
