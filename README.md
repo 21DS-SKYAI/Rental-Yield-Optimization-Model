@@ -46,6 +46,20 @@ Help leasing teams reduce time-on-market and identify underpriced/overpriced ren
 
 ```bash
 
+rental-yield-optimization/
+│── data/
+
+│── src/
+│   ├── cluster_markets.py
+│   ├── compute_yield.py
+│   └── recommend_rent.py
+
+│── app/
+│   └── dashboard.py      # Streamlit app
+
+│── README.md
+│── requirements.txt
+
 📌 Future Enhancements
 
 Integration with live rental data sources
