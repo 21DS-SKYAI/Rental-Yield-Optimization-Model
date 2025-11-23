@@ -1,0 +1,10 @@
+pip install -r requirements.txt
+streamlit run app/dashboard.py
+--------------------------------------
+Remote (Streamlit Cloud / EC2):
+
+Push repo to GitHub
+
+Connect to Streamlit Cloud OR
+
+Run on EC2 with tmux/screen and reverse proxy if needed.
