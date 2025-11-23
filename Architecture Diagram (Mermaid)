@@ -1,0 +1,8 @@
+flowchart LR
+    Listings[(Rental Listings + Market Data)] --> Features[Feature Engineering]
+    Features --> Cluster[KMeans Micro-Market Clustering]
+    Features --> Yield[Rental Yield Calculation]
+    Cluster --> Reco[Optimal Rent Recommendation]
+    Yield --> Reco
+    Reco --> Dashboard[Streamlit Dashboard]
+    Dashboard --> LeasingTeam[Leasing Team / Agents]
