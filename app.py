@@ -143,3 +143,21 @@ if uploaded_file:
         )
 else:
     st.info("Upload a CSV or Excel file to begin analysis.")
+
+
+st.subheader("🧩 How This App Works")
+
+st.markdown("""
+1️⃣ Upload your rental property data (CSV / Excel)  
+Note that Data field's must have - (latitude | longitude | carpet_area_sqft | monthly_rent | amenities_count)
+2️⃣ We automatically group properties into **micro-markets**  
+3️⃣ Each property is compared only with **similar peers**  
+4️⃣ You get **underpriced / overpriced flags** and **optimal rent**
+""")
+
+
+    caption="Rental Market Insight Workflow",
+    use_column_width=True
+)
+
+
