@@ -1,73 +1,79 @@
-# 🏢 Rental Yield Optimization Model
+# 🏙️ Rental Market Insight Engine  
+**Micro-Market Based Rent Optimization**
 
-A machine learning tool that recommends optimal rent for properties based on demand, amenities, locality characteristics, and market trends.
+A self-serve analytics app that helps landlords, brokers, and analysts  
+**set the right rent using data instead of guesswork**.
 
----
-
-## 🎯 Objective
-Help leasing teams reduce time-on-market and identify underpriced/overpriced rental opportunities.
-
----
-
-## 🏗️ Tech Stack
-- **Models:** KMeans, Regression, Feature Engineering  
-- **Data Tools:** Pandas, NumPy  
-- **Visualization:** Power BI / Tableau  
-- **Deployment:** Streamlit dashboard  
+Upload your property data → get instant insights on:
+-  Micro-markets
+-  Underpriced & overpriced properties
+-  Optimal rent recommendations
 
 ---
 
-## ⚙️ Key Components
-- Micro-market clustering using KMeans  
-- Market trend aggregation  
-- Amenity-based scoring  
-- Optimal rent recommendation  
-- Rent vs Yield analysis  
+## 🔍 Problem
+Landlords often struggle with pricing:
+- Set rent too high → property stays vacant  
+- Set rent too low → revenue loss  
+
+Most decisions are based on **locality averages**, which compare
+*dissimilar properties* and lead to wrong pricing.
 
 ---
 
-## 📊 Impact
-- Reduced time-on-market by **15–20%**  
-- Improved rent positioning for premium pockets  
-- Helped leasing teams justify pricing with data  
+## 💡 Solution
+This app uses **Machine Learning (K-Means clustering)** to:
+- Group similar properties into **micro-markets**
+- Compare each property only with its **true peers**
+- Recommend an **optimal rent** based on market behavior
+
+No technical knowledge required.
 
 ---
 
-## 📁 Example Workflow
-1. Ingest property + locality data  
-2. Compute yield metrics  
-3. Cluster market into similar segments  
-4. Recommend optimal rent + variance band  
-5. Display results in dashboard  
+## 🧩 How It Works (Simple Flow)
+
+1️⃣ Upload your rental property data (CSV / Excel)  
+2️⃣ App creates **micro-markets** using location & property features  
+3️⃣ Each property is benchmarked against similar properties  
+4️⃣ App flags:
+   - 🟢 Underpriced
+   - ⚪ Fair
+   - 🔴 Overpriced  
+5️⃣ Optimal rent is calculated and displayed
 
 ---
 
-## 💻 Setup
+## 📂 Required Data Format
 
-```bash
+Your file must contain the following **mandatory columns**:
+latitude
+longitude
+carpet_area_sqft
+monthly_rent
 
-rental-yield-optimization/
-│── data/
+### Optional (recommended for better accuracy):
+amenities_count
+building_age
 
-│── src/
-│   ├── cluster_markets.py
-│   ├── compute_yield.py
-│   └── recommend_rent.py
 
-│── app/
-│   └── dashboard.py      # Streamlit app
+### Example CSV:
+```csv
+latitude,longitude,carpet_area_sqft,monthly_rent,amenities_count,building_age
+19.02,72.84,750,85000,4,8
+19.07,72.89,900,120000,6,3
+18.98,72.82,600,65000,3,15
 
-│── README.md
-│── requirements.txt
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
 
-📌 Future Enhancements
-
-Integration with live rental data sources
-
-Geo-based clustering
-
-Image-based amenity scoring using YOLO
-
+Install dependencies
 
 pip install -r requirements.txt
-streamlit run app.py
+
+ Run Streamlit-streamlit run app.py
+
+
+
+
+
